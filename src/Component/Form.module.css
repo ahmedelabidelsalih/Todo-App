@@ -1,0 +1,27 @@
+.form button {
+    
+    height: 27px;
+    /* margin-left: 10px; */
+    font-weight: bold;
+    border-radius: 0 10px  10px 0;
+    border: none;
+}
+.form input {
+    height: 25px;
+    background-color: #cecdc8;
+border-radius:  10px  0 0 10px ;
+border: none;
+outline: none;
+text-align: center;
+}
+
+.form{
+margin: 20px auto;
+}
+
+.form button:hover {
+    background-color: #fffcfc;
+      outline: none;
+      cursor: pointer;
+      
+    }

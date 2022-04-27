@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { Component } from 'react';
+import './App.css';
+import Form from './Component/Form';
+import Tems from './Component/Tems';
+
+class App extends Component {
+  state = {
+    inputvalue:``,
+    todos:[
+     
+    ]
+  }
+  donetask = (index )=>{
+    const todos = [...this.state.todos];
+    todos.splice(index , 1);
+    this.setState({todos})
+  }
+  addvalue = ()=>{
+    const todos = [...this.state.todos];
+    todos.push({title :this.state.inputvalue})
+    this.setState({todos ,inputvalue:`` })
+
+  }
+  change =(e)=>{
+    this.setState({inputvalue :  e.target.value })
+  }
+  render(){
+    
   return (
+    <>
+   
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+    <Form value={this.state.inputvalue} onChange={this.change}  onClick={this.addvalue} />
+       
+
+        {this.state.todos.map((todo , index) => <Tems todo={todo} donetask={()=>this.donetask(index)}  key={index} />)}
     </div>
+    </>
   );
-}
+}}
 
 export default App;

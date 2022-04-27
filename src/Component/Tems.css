@@ -1,0 +1,28 @@
+.items {
+    background-color:#fffcfc;
+    width: 50%;
+    margin:25px  auto;
+    text-align: center;
+    border-radius: 10px;
+  
+}
+.items li {
+    list-style: none;
+    height: 31px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+  
+}
+.items button {
+ float: right;
+background-color: #988e68;
+border-radius: 0 10px 10px 0;
+height: 100%;
+}
+.items button:hover {
+background-color: #fffcfc;
+  outline: none;
+  cursor: pointer;
+}
+
